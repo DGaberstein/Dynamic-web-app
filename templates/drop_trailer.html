@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drop Trailer Checklist</title>
+</head>
+<body>
+    <h1>Drop Trailer Checklist</h1>
+    <form method="POST">
+        <label>Arrival Date:</label>
+        <input type="date" name="arrival_date"><br>
+        <label>Arrival Time:</label>
+        <input type="time" name="arrival_time"><br>
+        <label>Forwarding Agent:</label>
+        <input type="text" name="forwarding_agent"><br>
+        <label>Trailer Registration Number:</label>
+        <input type="text" name="trailer_reg"><br>
+        <label>Outdoor Marshal (OM) No:</label>
+        <input type="text" name="om_no"><br>
+
+        <label>1. Tires intact?</label>
+        <input type="radio" name="q1" value="yes">Yes
+        <input type="radio" name="q1" value="no">No<br>
+
+        <label>2. Wheel arch / underride guard intact?</label>
+        <input type="radio" name="q2" value="yes">Yes
+        <input type="radio" name="q2" value="no">No<br>
+
+        <!-- Add the other questions in a similar way -->
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

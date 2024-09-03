@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swap Body Checklist</title>
+</head>
+<body>
+    <h1>Swap Body Container Checklist</h1>
+    <form method="POST">
+        <label>Arrival Date:</label>
+        <input type="date" name="arrival_date"><br>
+        <label>Arrival Time:</label>
+        <input type="time" name="arrival_time"><br>
+        <label>Truck Registration Number:</label>
+        <input type="text" name="truck_reg"><br>
+        <label>Trailer Registration Number:</label>
+        <input type="text" name="trailer_reg"><br>
+        <label>WB Registration Number 1:</label>
+        <input type="text" name="wb_reg_1"><br>
+        <label>WB Registration Number 2:</label>
+        <input type="text" name="wb_reg_2"><br>
+        <label>Seal No. 1:</label>
+        <input type="text" name="seal_no_1"><br>
+        <label>Seal No. 2:</label>
+        <input type="text" name="seal_no_2"><br>
+        <label>Outdoor Marshal (OM) No:</label>
+        <input type="text" name="om_no"><br>
+        
+        <label>1. Does the truck driver follow the safety rules?</label>
+        <input type="radio" name="q1" value="yes">Yes
+        <input type="radio" name="q1" value="no">No<br>
+        
+        <label>2. Are all four legs in a vertical position?</label>
+        <input type="radio" name="q2" value="yes">Yes
+        <input type="radio" name="q2" value="no">No<br>
+        
+        <!-- Add the other questions in a similar way -->
+        
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Checklist</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Parking Checklist</h1>
+    <a href="{{ url_for('swap_body') }}">Swap Body Checklist</a><br>
+    <a href="{{ url_for('drop_trailer') }}">Drop Trailer Checklist</a>
+</body>
+</html>
