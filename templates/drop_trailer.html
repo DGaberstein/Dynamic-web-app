@@ -4,32 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drop Trailer Checklist</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Drop Trailer Checklist</h1>
-    <form method="POST">
-        <label>Arrival Date:</label>
-        <input type="date" name="arrival_date"><br>
-        <label>Arrival Time:</label>
-        <input type="time" name="arrival_time"><br>
-        <label>Forwarding Agent:</label>
-        <input type="text" name="forwarding_agent"><br>
-        <label>Trailer Registration Number:</label>
-        <input type="text" name="trailer_reg"><br>
-        <label>Outdoor Marshal (OM) No:</label>
-        <input type="text" name="om_no"><br>
+    <div class="container mt-5">
+        <h1 class="text-center">Drop Trailer Checklist</h1>
+        <form id="checklistForm" method="POST">
+            <!-- Step 1: Trailer Information -->
+            <div class="step" id="step-1">
+                <h3>Step 1: Trailer Information</h3>
+                <div class="mb-3">
+                    <label for="arrival_date" class="form-label">Arrival Date:</label>
+                    <input type="date" class="form-control" id="arrival_date" name="arrival_date" required>
+                </div>
+                <div class="mb-3">
+                    <label for="arrival_time" class="form-label">Arrival Time:</label>
+                    <input type="time" class="form-control" id="arrival_time" name="arrival_time" required>
+                </div>
+                <div class="mb-3">
+                    <label for="forwarding_agent" class="form-label">Forwarding Agent:</label>
+                    <input type="text" class="form-control" id="forwarding_agent" name="forwarding_agent" required>
+                </div>
+                <div class="mb-3">
+                    <label for="trailer_reg" class="form-label">Trailer Registration Number:</label>
+                    <input type="text" class="form-control" id="trailer_reg" name="trailer_reg" required>
+                </div>
+                <div class="mb-3">
+                    <label for="om_no" class="form-label">Outdoor Marshal (OM) No:</label>
+                    <input type="text" class="form-control" id="om_no" name="om_no" required>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="nextStep()">Next</button>
+            </div>
 
-        <label>1. Tires intact?</label>
-        <input type="radio" name="q1" value="yes">Yes
-        <input type="radio" name="q1" value="no">No<br>
-
-        <label>2. Wheel arch / underride guard intact?</label>
-        <input type="radio" name="q2" value="yes">Yes
-        <input type="radio" name="q2" value="no">No<br>
-
-        <!-- Add the other questions in a similar way -->
-
-        <input type="submit" value="Submit">
-    </form>
+            <!-- Step 2: Inspection Questions -->
+            <div class="step" id="step-2" style="display:none;">
+                <h3>Step 2: Inspection Questions</h3>
+                <div class="mb-3">
+                    <label class="form-label">1. Tires intact?</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="q1" id="q1_yes" value="yes" required>
+                        <label class="form-check-label" for="q1_yes">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="q1" id="q1_no" value="no" required>
+                        <label class="form-check-label" for="q1_no">No</label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">2. Wheel arch / underride guard intact?</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="q2" id="q2_yes" value="yes" required>
+                        <label class="form-check-label" for="q2_yes">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="q2" id="q2_no" value="no" required>
+                        <label class="form-check-label" for="q2_no">No</label>
+                    </div>
+                </div>
+                <!-- Add other questions similarly -->
+                <div class="mb-3">
+                    <label class="form-label">3. Lighting intact?</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="q3" id="q3_yes" value="yes" required>
+                        <label class="form-check-label" for="q3_yes">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="q3" id="q3_no" value="no" required>
+                        <label class="form-check-label" for="q3_no">No</label>
+                    </div>
+                </div>
+                <!-- Continue for q4, q5, q6, q7 -->
+                <button type="button" class="btn btn-secondary" onclick="prevStep()">Back</button>
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+        </form>
+    </div>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+    <!-- Include jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Include custom scripts -->
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
 </body>
 </html>

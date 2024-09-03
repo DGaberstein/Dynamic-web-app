@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///checklists.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 # Models
@@ -57,12 +58,12 @@ def swap_body():
             seal_no_1=request.form['seal_no_1'],
             seal_no_2=request.form['seal_no_2'],
             om_no=request.form['om_no'],
-            q1=request.form['q1'],
-            q2=request.form['q2'],
-            q3=request.form['q3'],
-            q4=request.form['q4'],
-            q5=request.form['q5'],
-            q6=request.form['q6'],
+            q1=request.form.get('q1'),
+            q2=request.form.get('q2'),
+            q3=request.form.get('q3'),
+            q4=request.form.get('q4'),
+            q5=request.form.get('q5'),
+            q6=request.form.get('q6'),
         )
         db.session.add(checklist)
         db.session.commit()
@@ -78,13 +79,13 @@ def drop_trailer():
             forwarding_agent=request.form['forwarding_agent'],
             trailer_reg=request.form['trailer_reg'],
             om_no=request.form['om_no'],
-            q1=request.form['q1'],
-            q2=request.form['q2'],
-            q3=request.form['q3'],
-            q4=request.form['q4'],
-            q5=request.form['q5'],
-            q6=request.form['q6'],
-            q7=request.form['q7'],
+            q1=request.form.get('q1'),
+            q2=request.form.get('q2'),
+            q3=request.form.get('q3'),
+            q4=request.form.get('q4'),
+            q5=request.form.get('q5'),
+            q6=request.form.get('q6'),
+            q7=request.form.get('q7'),
         )
         db.session.add(checklist)
         db.session.commit()

@@ -1,0 +1,31 @@
+.step {
+    transition: opacity 0.5s ease-in-out;
+}
+
+.step.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.step.visible {
+    opacity: 1;
+}
+.step {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.step.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.step.hidden-left {
+    transform: translateX(-100%);
+}
+
+.step.hidden-right {
+    transform: translateX(100%);
+}
